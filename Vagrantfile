@@ -513,6 +513,10 @@ Vagrant.configure(2) do |config|
         end
       end
 
+      if machine_type['type'] == 'master'
+        config.vm.network "forwarded_port", host: 8080, guest: 80, auto_correct: true
+      end
+
       if user_config.private_registry
         machine.vm.provision :shell do |vm|
           vm.name = 'Start Private Docker Registry'
