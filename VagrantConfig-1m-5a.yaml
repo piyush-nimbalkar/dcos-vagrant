@@ -1,0 +1,51 @@
+m1:
+  ip: 192.168.65.90
+  cpus: 4
+  memory: 4096
+  type: master
+  ui_host_port: 8080
+a1:
+  ip: 192.168.65.111
+  cpus: 4
+  memory: 16384
+  memory-reserved: 512
+  type: agent-private
+  disk_path: /mnt/disk1/dcos_agent1_data.vdi
+  disk_size: 102400
+a2:
+  ip: 192.168.65.121
+  cpus: 4
+  memory: 16384
+  memory-reserved: 512
+  type: agent-private
+  disk_path: /mnt/disk1/dcos_agent2_data.vdi
+  disk_size: 102400
+a3:
+  ip: 192.168.65.131
+  cpus: 4
+  memory: 16384
+  memory-reserved: 512
+  type: agent-private
+  disk_path: /mnt/disk1/dcos_agent3_data.vdi
+  disk_size: 102400
+a4:
+  ip: 192.168.65.141
+  cpus: 4
+  memory: 16384
+  memory-reserved: 512
+  type: agent-private
+  disk_path: /mnt/disk1/dcos_agent4_data.vdi
+  disk_size: 102400
+a5:
+  ip: 192.168.65.151
+  cpus: 4
+  memory: 16384
+  memory-reserved: 512
+  type: agent-private
+  disk_path: /mnt/disk2/dcos_agent5_data.vdi
+  disk_size: 102400
+boot:
+  ip: 192.168.65.50
+  cpus: 2
+  memory: 1024
+  type: boot
