@@ -511,6 +511,10 @@ Vagrant.configure(2) do |config|
           vm.name = 'Install Mesos Memory Modifier'
           vm.path = provision_script_path('install-mesos-memory')
         end
+        machine.vm.provision :shell do |vm|
+          vm.name = "Setup a ssh key to login to root user"
+          vm.path = provision_script_path('setup-root-ssh')
+        end
       end
 
       if machine_type['type'] == 'master'
