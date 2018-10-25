@@ -537,6 +537,16 @@ Vagrant.configure(2) do |config|
         end
       end
 
+      if machine_type['type'] == 'master'
+        config.vm.network "forwarded_port", host: 8080, guest: 80, auto_correct: true
+        config.vm.network "forwarded_port", host: 8081, guest: 443, auto_correct: true
+      end
+
+      if machine_type['type'] == 'agent-public'
+        config.vm.network "forwarded_port", host: 9998, guest: 9998, auto_correct: true
+        config.vm.network "forwarded_port", host: 9999, guest: 9999, auto_correct: true
+      end
+
       if machine_type['type'] == 'boot'
         # install DC/OS after boot machine is provisioned
         machine.vm.provision :dcos_install do |dcos|
